@@ -1,7 +1,9 @@
 n, s = tuple(map(int, input().split()))
 arr = list(map(int, input().split()))
 
-minimum = 100
+import sys
+
+minimum = sys.maxsize
 
 for i in range(n - 1):
     for j in range(i + 1, n):
