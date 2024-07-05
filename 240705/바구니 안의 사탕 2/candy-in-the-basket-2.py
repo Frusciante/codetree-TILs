@@ -11,5 +11,7 @@ for _ in range(n):
 maximum = 0
 for i in range(k, max_idx-k+1):
     maximum = max(sum(arr[i-k:i+k+1]), maximum)
+if k >= max_idx/2:
+    maximum = sum(arr)
 
 print(maximum)
