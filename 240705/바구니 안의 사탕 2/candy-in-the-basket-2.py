@@ -5,7 +5,7 @@ arr = [0] * 1000
 max_idx = 0
 for _ in range(n):
     num, idx = tuple(map(int, input().split()))
-    arr[idx] = num
+    arr[idx] += num
     max_idx = max(max_idx, idx)
 
 maximum = 0
