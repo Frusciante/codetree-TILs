@@ -1,6 +1,6 @@
 n, k = tuple(map(int, input().split()))
 
-arr = [0] * 101
+arr = [0] * 1000
 
 max_idx = 0
 for _ in range(n):
