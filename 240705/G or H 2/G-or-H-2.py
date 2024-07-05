@@ -24,7 +24,7 @@ for i in range(n-1):
         if cnt_g == cnt_h:
             max_part = arr[j][0] - arr[i][0]
     if not (cnt_g and cnt_h):
-        max_part = arr[0][0]
+        max_part = arr[len(arr)-1][0] - arr[0][0]
     max_all = max(max_all, max_part)
 
 print(max_all)
