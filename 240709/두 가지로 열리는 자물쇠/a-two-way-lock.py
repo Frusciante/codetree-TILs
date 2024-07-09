@@ -8,8 +8,8 @@ arr2 = [item - 1 for item in arr2]
 bitmap = [list(0 for _ in range(n)) for _ in range(3)]
 
 for i in range(3):
-    bitmap[i][arr1[i]] = 1
-    bitmap[i][arr2[i]] = 2
+    bitmap[i][arr1[i]] += 1
+    bitmap[i][arr2[i]] += 2
     for j in range(1, 3):
         a = (arr1[i] + j) % n
         bitmap[i][a] += 1
