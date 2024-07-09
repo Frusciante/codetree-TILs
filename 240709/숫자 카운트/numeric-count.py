@@ -37,6 +37,6 @@ for i in range(1, 10):
                     break
             if satisfied:
                 cnt += 1
-                print(i, j, k)
+
 
 print(cnt)
