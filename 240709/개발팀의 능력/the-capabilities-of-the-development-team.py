@@ -11,17 +11,14 @@ for i in range(5):
         for k in range(5):
             if j == k or k == i:
                 continue
-            for l in range(5):
-                if l == k or l == j or l == i:
-                    continue
-                team1 = arr[i] + arr[j]
-                team2 = arr[k] + arr[l]
-                team3 = s - team1 - team2
-                if team1 == team2 or team1 == team3 or team2 == team3:
-                    continue
-                min_val = min(max(team1, team2, team3) - min(team1, team2, team3), min_val)
+            team1 = arr[i] + arr[j]
+            team2 = arr[k]
+            team3 = s - team1 - team2
+            if team1 == team2 or team1 == team3 or team2 == team3:
+                continue
+            min_val = min(max(team1, team2, team3) - min(team1, team2, team3), min_val)
 
 if min_val == sys.maxsize:
     min_val = -1
-    
+
 print(min_val)
