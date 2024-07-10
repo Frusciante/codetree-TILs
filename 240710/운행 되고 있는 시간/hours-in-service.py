@@ -1,21 +1,18 @@
 n = int(input())
 arr = [tuple(map(int, input().split())) for _ in range(n)]
 
-o_arr = [0] * 1001
+last = max(arr, key = lambda x: x[1])[1]
 
-for i, (a, b) in enumerate(arr):
-    for j in range(a, b + 1):
-        o_arr[j] += 1
 
 max_val = 0
-for i, (a, b) in enumerate(arr):
-    copied = o_arr
-    for j in range(a, b + 1):
-        copied[j] -= 1
-    cnt = 0
-    for j in range(1001):
-        if copied[j] is not 0:
-            cnt += 1
-    max_val = max(max_val, cnt)
+for i in range(n):
+    oper_list = [0] * (last + 1)
+    for j in range(n):
+        if j == i:
+            continue
+        a, b = arr[j]
+        for k in range(a, b):
+            oper_list[k] = 1
+    max_val = max(max_val, oper_list.count(1))
 
 print(max_val)
