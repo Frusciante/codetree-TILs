@@ -9,10 +9,9 @@ for i in range(n):
     max_x = -sys.maxsize
     min_y = sys.maxsize
     max_y = -sys.maxsize
-    for j in range(n):
+    for j, (x, y) in enumerate(arr):
         if j == i:
             continue
-        x, y = arr[j]
         min_x = min(x, min_x)
         max_x = max(x, max_x)
         min_y = min(y, min_y)
