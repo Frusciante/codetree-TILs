@@ -9,8 +9,8 @@ for (price, shipping) in arr:
     if ans + price + shipping <= b:
         ans += (price + shipping)
         cnt += 1
-    elif ans + (price // 2) + shipping <= b:
-        ans += (price // 2 + shipping)
+    elif ans + (price + shipping) // 2 <= b:
+        ans += (price + shipping) // 2
         cnt += 1
         break
     else:
