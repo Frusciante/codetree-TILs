@@ -8,10 +8,10 @@ for i in range(k):
             all_noc[i].append((games[i][j], games[i][l]))
 
 cnt = 0
-for item in games[0]:
+for item in all_noc[0]:
     check = True
-    for j in range(1, k):
-        if item not in games[j]:
+    for j in range(k):
+        if item not in all_noc[j]:
             check = False
             break
     if check:
