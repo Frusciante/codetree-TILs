@@ -17,9 +17,10 @@ for (patient, start) in ach_rec:
 max_medicine = 0
 for i in range(1, m + 1):
     cnt = 0
-    for (person, cheese, time) in eat_rec:
-        if cheese == possible[i]:
-            cnt += 1
+    if possible[i] == s:
+        for (person, cheese, time) in eat_rec:
+            if cheese == i:
+                cnt += 1
     max_medicine = max(max_medicine, cnt)
 
 print(max_medicine)
