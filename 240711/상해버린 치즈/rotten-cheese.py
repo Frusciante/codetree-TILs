@@ -13,14 +13,17 @@ for (patient, start) in ach_rec:
             possible[cheese] += 1
         else:
             break
-
+person_bitmap = [0] * (n + 1)
 max_medicine = 0
 for i in range(1, m + 1):
     cnt = 0
-    if possible[i] == s:
+    if possible[i] >= s:
         for (person, cheese, time) in eat_rec:
             if cheese == i:
-                cnt += 1
+                if not person_bitmap[person]:
+                    cnt += 1
+                    person_bitmap[person] = 1
+                
     max_medicine = max(max_medicine, cnt)
 
 print(max_medicine)
