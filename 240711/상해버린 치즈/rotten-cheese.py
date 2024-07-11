@@ -13,6 +13,7 @@ for (patient, start) in ach_rec:
             possible[cheese] += 1
         else:
             break
+            
 person_bitmap = [0] * (n + 1)
 max_medicine = 0
 for i in range(1, m + 1):
