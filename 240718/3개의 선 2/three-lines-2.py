@@ -1,15 +1,18 @@
 n = int(input())
 points = [tuple(map(int, input().split())) for _ in range(n)]
 
+# 점에서 직선 추출, 중복 방지를 위해 집합 사용
 all_lines = set()
 for point in points:
     x, y = point
     all_lines.add((0, x))
     all_lines.add((1, y))
 
+# 인덱싱 위해 리스트로 변환
 all_lines_list = list(all_lines)
 l = len(all_lines_list)
 
+# 직선 3개씩 뽑아 모든 점이 포함되는 지 확인
 possible = 0
 bitmap = [0] * n
 for i in range(l - 2):
