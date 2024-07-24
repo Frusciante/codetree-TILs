@@ -5,7 +5,7 @@ answer = 0
 for i in range(1, 11):
     x = i
     for start, end in ranges:
-        if start < x * 2 and x * 2 < end:
+        if start <= x * 2 and x * 2 <= end:
             x *= 2
         else:
             break
