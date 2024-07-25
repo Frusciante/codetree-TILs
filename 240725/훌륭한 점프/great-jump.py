@@ -6,9 +6,10 @@ def is_possible(max_val):
     for i, stone in enumerate(stones):
         if stone <= max_val:
             available_indices.append(i)
-    if 0 not in available_indices:
+    l = len(available_indices)
+    if 0 not in available_indices or n - 1 not in available_indices:
         return False
-    for j in range(1, len(available_indices)):
+    for j in range(1, l):
         if available_indices[j] - available_indices[j-1] > k:
             return False
     return True
