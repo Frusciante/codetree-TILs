@@ -13,8 +13,18 @@ for item in arr:
 s = maxi + mini
 
 smallest = sys.maxsize
-for i in range(1, (s + 1) // 2):
+for i in range(1, maxi):
     for j, num in enumerate(arr):
         if num < i:
-            moved[j] 
-        elif num > i - num
+            moved[j] = i - num
+        elif num > i + 17:
+            moved[j] = num - i - 17
+    ans = 0
+    for mov in moved:
+        ans += mov ** 2
+    smallest = min(smallest, ans)
+    
+    for k in range(n):
+        moved[k] = 0
+
+print(smallest)
