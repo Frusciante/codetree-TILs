@@ -9,12 +9,10 @@ for i, bomb in enumerate(bombs):
         if bombs[i + j] == bomb:
             bombs_cnt[bomb] += 2 if bombs_cnt[bomb] == 0 else 1
             break
-maximum = 0
+maximum = 1
 max_bomb_num = 0
 
 for bomb_num in bombs_cnt:
-    if bombs_cnt[bomb_num] == 0:
-        continue
     if bombs_cnt[bomb_num] > maximum:
         maximum = bombs_cnt[bomb_num]
         max_bomb_num = bomb_num
