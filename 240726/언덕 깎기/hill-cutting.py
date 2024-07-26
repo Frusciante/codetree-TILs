@@ -13,7 +13,7 @@ for item in arr:
 s = maxi + mini
 
 smallest = sys.maxsize
-for i in range(1, maxi):
+for i in range(mini, maxi):
     for j, num in enumerate(arr):
         if num < i:
             moved[j] = i - num
