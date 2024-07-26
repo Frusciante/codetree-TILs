@@ -9,6 +9,7 @@ for i, bomb in enumerate(bombs):
         if bombs[i + j] == bomb:
             bombs_cnt[bomb] += 2 if bombs_cnt[bomb] == 0 else 1
             break
+# 최소 폭탄 2개는 있어야 터질 수 있으므로 카운트가 0일 때 꼬이는 것을 방지하기 위해 maximum을 1이라고 둠
 maximum = 1
 max_bomb_num = 0
 
