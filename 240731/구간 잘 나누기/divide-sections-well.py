@@ -19,6 +19,6 @@ for i in range(10000):
 
         cnt += arr[j]
 
-    if possible and m == sec:
+    if possible and m >= sec:
         print(i)
         break
