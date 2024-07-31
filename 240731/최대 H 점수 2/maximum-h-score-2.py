@@ -13,27 +13,25 @@ def cal_hscore(nums):
 
 n, l = tuple(map(int, input().split()))
 arr = list(map(int, input().split()))
-arr_set = set(arr)
 
-cnt_dic = {num: 0 for num in arr}
-for num in arr_set:
-    for check in arr:
-        if num <= check:
-            cnt_dic[num] += 1
+cnt_arr = [0] * 101
+for num in arr:
+    for i in range(101):
+        if i <= num:
+            cnt_arr[i] += 1
 
+print(cnt_arr)
+            
 start = cal_hscore(arr)
-
 m = start
 for h in range(start, 101):
-    if h not in arr:
-        continue
     c = arr.count(h)
     if l >= c:
         if (h + 1) in arr:
-            if c + cnt_dic[h + 1] >= h + 1:
+            if c + cnt_arr[h + 1] >= h + 1:
                 m = h + 1
         else:
-            if cnt_dic[h] >= h + 1:
+            if cnt_arr[h] >= h + 1:
                 m = h + 1
 
 print(m)
