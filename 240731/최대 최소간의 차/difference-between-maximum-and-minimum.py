@@ -7,10 +7,19 @@ minnum = min(arr)
 while maxnum - minnum > k:
     min_changed = False
     max_changed = False
-    min_cnt = arr.count(minnum)
-    max_cnt = arr.count(maxnum)
+
+    min_cnt = 0
     for i in range(n):
-        if arr[i] + cost[i] == minnum and min_cnt <= max_cnt:
+        if arr[i] + cost[i] == minnum:
+            min_cnt += 1
+
+    max_cnt = 0
+    for i in range(n):
+        if arr[i] - cost[i] == maxnum:
+            max_cnt += 1
+
+    for i in range(n):
+        if arr[i] + cost[i] == minnum and min_cnt < max_cnt:
             cost[i] += 1
             min_changed = True
         elif arr[i] - cost[i] == maxnum and min_cnt >= max_cnt:
@@ -18,7 +27,7 @@ while maxnum - minnum > k:
             max_changed = True
     if max_changed:
         maxnum -= 1
-    if min_changed:
+    elif min_changed:
         minnum += 1
 
 print(sum(cost))
