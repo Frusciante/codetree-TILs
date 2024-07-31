@@ -19,8 +19,6 @@ for num in arr:
     for i in range(101):
         if i <= num:
             cnt_arr[i] += 1
-
-print(cnt_arr)
             
 start = cal_hscore(arr)
 m = start
