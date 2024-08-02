@@ -12,7 +12,7 @@ while p >= 1 and u_record[p - 1] == u_record[p - 2]:
     p -= 1
 
 if u_record[p - 1] == 0:
-    print("")
+    pass
 else:
     answer = set()
     for i in range(p - 1, m):
