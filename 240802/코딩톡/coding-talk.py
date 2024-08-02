@@ -18,7 +18,6 @@ else:
     for i in range(p - 1, m):
         answer.add(c_record[i])
 
-    answer = list(answer)
     for c in full:
         if c not in answer:
             print(c, end=' ')
