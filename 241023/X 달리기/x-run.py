@@ -1,12 +1,12 @@
 def accelerate_decision(sp, remainder):
-    if ((sp + 2) * sp / 2 < remainder):
+    if ((sp + 2) * (sp + 1) / 2 <= remainder):
         return sp + 1
-    elif ((n + 1) * n / 2 < remainder):
+    elif ((sp + 1) * sp / 2 <= remainder):
         return sp
     else:
         return sp - 1
 
-n = int(input())
+n = int(input()) - 1
 speed = 1
 cnt = 1
 
